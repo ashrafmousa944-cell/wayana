@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+@layer base {
+  * {
+    font-family: 'Cairo', system-ui, -apple-system, sans-serif;
+  }
+  html, body {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+  }
+}
+
+/* Luxury Radial Welcome Glow */
+.luxury-radial-bg {
+  background: radial-gradient(circle at 50% 48%, #ffffff 0%, #fffdf8 45%, #fff5e6 85%, #fdeed8 100%);
+}
+
+.pattern-overlay {
+  background-image: 
+    radial-gradient(circle at 25px 25px, rgba(21, 87, 192, 0.04) 2%, transparent 0%),
+    radial-gradient(circle at 75px 75px, rgba(242, 140, 40, 0.04) 2%, transparent 0%);
+  background-size: 100px 100px;
+}
+
+.logo-halo {
+  box-shadow: 0 0 75px 15px rgba(21, 87, 192, 0.12), 0 0 130px 40px rgba(242, 140, 40, 0.09);
+}
+
+@keyframes subtlePulse {
+  0%, 100% { transform: scale(1); opacity: 0.45; }
+  50% { transform: scale(1.08); opacity: 0.75; }
+}
+
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
+
+.animate-subtle-pulse {
+  animation: subtlePulse 3s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: floatSlow 4s ease-in-out infinite;
+}
+
+/* Custom scrollbar hiding */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
